@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: demo
+
+server:
+  port: 8081
+  compression:
+    enabled: true
+
+logging:
+  level:
+    root: WARN
+
+cache:
+  maximumSize: 10_000
+  expireAfterWriteInMin: 10
+
+github:
+  baseUrl:  http://localhost:8080
+  endpoint: /users/{username}/repos
+  token: place_your_token_here
+  XGitHubApiVersion: 2022-11-28
+  linkNextPattern: (?<=<)([^>]+)(?=>;\s*rel="next")
+  placeholderPattern: \{.*?\}
+  client:
+    pageSize: 3
+    connectTimeoutInMilliseconds: 2000
+    responseTimeoutInSeconds: 2
+    maxRetryAttempts: 1
+    minBackOff: 500
+    maxBackoffInSeconds: 2
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /openapi/swagger-ui.html
+  api-docs:
+    path: /openapi/v3/api-docs
+  packagesToScan:
+    - com.example.demo.handler
+    - com.example.demo
+
+
+api:
+  common:
+    version: 1.0.0
+    title: Sample API for pwrteam
+    description: list github repositories
+    termsOfService: MY TERMS OF SERVICE
+    license: MY LICENSE
+    licenseUrl: MY LICENSE URL
+
+    contact:
+      name: NAME OF CONTACT
+      url: URL TO CONTACT
+      email: gshmalyukh@gmail.com
+
+
