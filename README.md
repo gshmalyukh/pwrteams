@@ -15,8 +15,8 @@ Tests use wiremock.
 /users/{username}/repositories.
 can use parameter ?filter=(focked, nonforked, all (by default)).
 On first query system cache the pages - pagination is used so app goes through all 
-  pages and saves pages and ETags. Next time with the same page it sends etag and if
-  we have 304 reponse take page from cache. (At first I have done loading the pages 
+  pages and saves pages and ETags. Next time with the same page app sends etag and if
+  we have 304 reponse from GitHub app take page from cache. (At first I have done loading the pages 
   from cache in the event of network problems, later decided against it).
 All configurations in the application.yaml.
 
